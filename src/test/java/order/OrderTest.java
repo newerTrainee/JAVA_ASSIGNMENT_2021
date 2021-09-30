@@ -16,11 +16,12 @@ class OrderTest {
 
 }
 @Test
-    public void testClassObject(){
-    List<Order> orders = new ArrayList<>();
-    orders.add(new Order(40,"Soap",35));
-    orders.add(new Order(20,"Gifts",50));
-    orders.add(new Order(10,"silk",60));
-
-}
+    public void testConstructor(){
+  Order o =  new Order(40,"Soap",35);
+ assertAll("Error in values",
+            () ->assertEquals("Soap", o.getItemName()),
+            () ->assertEquals(40, o.getQuantity()),
+            () ->assertEquals(35, o.getPrice())
+    );
+    }
 }
