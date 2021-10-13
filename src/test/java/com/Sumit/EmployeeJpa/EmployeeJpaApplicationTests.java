@@ -66,7 +66,7 @@ class EmployeeJpaApplicationTests {
 
 	@Test
 	public void testFindByNameCharacter(){
-		List<Employee> a = repository.findByNameLike("%A%");
+		List<Employee> a = repository.findByNameLike("A%");
 		a.forEach(p -> System.out.println(p.getName()));
 	}
 
