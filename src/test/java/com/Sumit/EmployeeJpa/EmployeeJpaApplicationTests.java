@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
@@ -70,10 +73,25 @@ class EmployeeJpaApplicationTests {
 		a.forEach(p -> System.out.println(p.getName()));
 	}
 
-//	@Test
-//	public void testSorting(){
-//		repository.findAll(new Sort("age")).forEach(employee -> System.out.println(employee.getName()));
-//	}
+	@Test
+	public void testSorting(){
+		List<Employee> age = repository.findAll(Sort.by("age"));
+       age.forEach(a -> System.out.println(a.getName()));
+	}
+
+	@Test
+	public void testFindAllPaging(){
+		Pageable pageable =  PageRequest.of(2,3);
+		Page<Employee> page = repository.findAll(pageable);
+		page.forEach(p -> System.out.println(p.getName()));
+	}
+
+     @Test
+	public void testFindAllPagingAndSorting(){
+		Pageable pageable = PageRequest.of(0,2, Sort.Direction.DESC,"name");
+		Page<Employee> page = repository.findAll(pageable);
+		page.forEach(p -> System.out.println(p.getName()));
+	 }
 
 	}
 

@@ -1,13 +1,14 @@
 package com.Sumit.EmployeeJpa;
 
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface EmployeeRepository extends /* PagingAndSortingRepository<Employee,Integer>*/ CrudRepository<Employee,Integer>{
+public interface EmployeeRepository extends /* PagingAndSortingRepository<Employee,Integer> CrudRepository<Employee,Integer> */ JpaRepository<Employee,Integer> {
 
     List<Employee> findByName(String name);
     List<Employee> findByAgeBetween(int a,int b);
