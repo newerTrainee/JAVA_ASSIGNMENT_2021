@@ -3,21 +3,13 @@ package com.example.BookMapping;
 import com.example.BookMapping.ManyToOne_Bidirectional.Author1;
 import com.example.BookMapping.ManyToOne_Bidirectional.Author1Repository;
 import com.example.BookMapping.ManyToOne_Bidirectional.Book1;
-import com.example.BookMapping.OneToMany_unidirectional.Author2;
 import com.example.BookMapping.OneToMany_unidirectional.Author2Repo;
-import com.example.BookMapping.OneToMany_unidirectional.Book2;
 import com.example.BookMapping.OnetoOne.Author;
 import com.example.BookMapping.OnetoOne.AuthorRepository;
 import com.example.BookMapping.OnetoOne.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashSet;
-import java.util.Optional;
 
 
 @SpringBootTest

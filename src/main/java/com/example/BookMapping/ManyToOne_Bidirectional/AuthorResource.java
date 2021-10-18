@@ -15,6 +15,10 @@ public class AuthorResource {
     @Autowired
     Author1Repository repository;
 
+    @GetMapping("/")
+    public String testController(){
+        return "index";
+    }
 
     @GetMapping("/author/{id}")
     public Author1 retrive(@PathVariable Integer id) {
