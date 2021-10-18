@@ -1,4 +1,4 @@
-package com.example.BookMapping.ManyToOne;
+package com.example.BookMapping.ManyToOne_Bidirectional;
 
 import org.springframework.data.repository.CrudRepository;
 
